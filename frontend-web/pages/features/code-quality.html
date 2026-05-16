@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Code Quality - AI Code Review</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="../../css/features.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="../../index.html" class="nav-brand"><i class="fas fa-code-branch"></i><span>AI Code Review</span></a>
+<div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+<div class="nav-menu" id="navMenu">
+<a href="../../index.html" class="nav-link" data-nav="home">Home</a>
+<a href="../features.html" class="nav-link" data-nav="features">Features</a>
+<a href="../login.html" class="nav-link" data-nav="login">Login</a>
+<a href="../register.html" class="nav-link" data-nav="register">Register</a>
+</div></div></nav>
+<section class="feature-hero"><div class="container"><div>
+<p class="feature-breadcrumb"><a href="../features.html">Features</a> / Code Quality</p>
+<h1><i class="fas fa-code"></i> Code Quality</h1>
+<p>Enforce maintainability, naming conventions, error handling, and modern best practices.</p>
+</div><i class="fas fa-code feature-hero-icon"></i></div></section>
+
+<section class="page-about"><div class="container"><div class="page-about-content">
+<h2>About Code Quality</h2>
+<p>Maintain high standards across your codebase. Our Code Quality feature analyzes naming conventions, error handling, type safety, and maintainability to ensure your code is clean, readable, and follows best practices.</p>
+<div class="page-about-features">
+<div class="page-about-feature"><i class="fas fa-check-double"></i><h3>Style Checks</h3><p>Consistent naming and formatting</p></div>
+<div class="page-about-feature"><i class="fas fa-wrench"></i><h3>Maintainability</h3><p>Easy-to-maintain code patterns</p></div>
+<div class="page-about-feature"><i class="fas fa-star"></i><h3>Best Practices</h3><p>Industry-standard recommendations</p></div>
+</div></div></div></section>
+
+<section class="feature-body"><div class="container">
+<div class="feature-grid-2">
+<div class="feature-panel"><h2><i class="fas fa-check-circle"></i> Capabilities</h2><ul class="benefit-list"><li>Style and naming analysis</li><li>Error handling coverage</li><li>Type safety suggestions</li><li>Maintainability score</li><li>Refactoring recommendations</li></ul></div>
+<div class="feature-panel"><h2><i class="fas fa-play-circle"></i> Live demo</h2>
+<label for="sampleCode">Paste code or diff:</label>
+<textarea id="sampleCode" class="demo-textarea"></textarea>
+
+<div class="demo-actions">
+<button type="button" class="btn btn-secondary" id="loadSampleBtn">Load Sample</button>
+<button type="button" class="btn btn-primary" id="runDemoBtn"><span class="btn-text"><i class="fas fa-play"></i> Run Scan</span><span class="btn-loader" style="display:none"><i class="fas fa-spinner fa-spin"></i></span></button>
+</div>
+<div id="demoResults" class="demo-results"><p>Score: <strong id="demoOverallScore">-</strong>/100</p>
+<div id="demoMetrics" class="metric-row"></div><h3>Findings</h3><div id="demoIssues"></div>
+<h3>Recommendations</h3><div id="demoSuggestions"></div>
+<a href="#" id="demoReviewLink" class="btn btn-secondary btn-sm" style="display:none;margin-top:1rem">View Saved Review</a></div>
+</div></div>
+
+<div class="feature-panel" id="yourReviewsPanel" style="display:none"><h2><i class="fas fa-history"></i> Your reviews</h2><div id="userInsights"></div></div>
+<div class="cta-banner"><h3>Use Code Quality on every PR</h3><p>Create a free account to save and share results.</p>
+<a href="../register.html" class="btn btn-primary" id="featureLoginBtn">Get Started</a>
+<a href="../review.html" class="btn btn-primary" id="featureReviewBtn" style="display:none">New Review</a>
+<a href="#" class="btn btn-secondary" id="goToReviewBtn">Open Editor</a></div>
+</div></section>
+<footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2024 AI Code Review.</p></div></div></footer>
+<script src="../../js/config.js"></script><script src="../../js/auth.js"></script><script src="../../js/api.js"></script>
+<script src="../../js/nav.js"></script><script src="../../js/features.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{initFeaturePage('code-quality');if(Auth.isAuthenticated())document.getElementById('yourReviewsPanel').style.display='block';});</script>
+</body></html>

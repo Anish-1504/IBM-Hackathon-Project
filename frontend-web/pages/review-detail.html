@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Details - AI Code Review Assistant</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-brand">
+                <i class="fas fa-code-branch"></i>
+                <span>AI Code Review</span>
+            </a>
+            <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-link" data-nav="home">Home</a>
+                <a href="dashboard.html" class="nav-link" data-nav="dashboard">Dashboard</a>
+                <a href="review.html" class="nav-link" data-nav="review">New Review</a>
+                <a href="reviews.html" class="nav-link" data-nav="reviews">Reviews</a>
+                <a href="profile.html" class="nav-link" data-nav="profile">Profile</a>
+                <a href="#" class="nav-link" id="logoutLink">Logout</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="review-section">
+        <div class="container">
+            <div class="review-header" id="reviewMeta">
+                <h1>Review Details</h1>
+            </div>
+
+            <div id="loadingState" class="loading-spinner">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Loading review...</p>
+            </div>
+
+            <div id="detailError" class="error-message" style="display: none;"></div>
+
+            <div id="detailContent" style="display: none;">
+                <div class="review-container">
+                    <div class="results-section" id="resultsSection">
+                        <div class="results-header">
+                            <h2><i class="fas fa-check-circle"></i> Analysis Results</h2>
+                            <div class="header-actions">
+                                <button type="button" class="btn btn-secondary btn-sm" id="backBtn">
+                                    <i class="fas fa-arrow-left"></i> Back
+                                </button>
+                                <button type="button" class="btn btn-primary btn-sm" id="newReviewBtn">
+                                    <i class="fas fa-plus"></i> New Review
+                                </button>
+                                <button type="button" class="btn btn-secondary btn-sm" id="deleteReviewBtn">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="results-content">
+                            <div class="score-card">
+                                <h3>Overall Score</h3>
+                                <div class="score-display">
+                                    <div class="score-circle">
+                                        <span id="overallScore">0</span>
+                                        <small>/100</small>
+                                    </div>
+                                    <div class="score-label" id="scoreLabel">-</div>
+                                </div>
+                            </div>
+
+                            <div class="category-scores">
+                                <h3>Category Breakdown</h3>
+                                <div id="categoryScores"></div>
+                            </div>
+
+                            <div class="issues-section">
+                                <h3>Issues Found</h3>
+                                <div id="issuesList"></div>
+                            </div>
+
+                            <div class="suggestions-section">
+                                <h3>Recommendations</h3>
+                                <div id="suggestionsList"></div>
+                            </div>
+
+                            <div class="results-actions">
+                                <button type="button" class="btn btn-secondary" id="downloadReportBtn">
+                                    <i class="fas fa-download"></i> Download Report
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard-section diff-section" style="display: none; margin-top: 2rem;">
+                        <h3><i class="fas fa-file-code"></i> Code Diff</h3>
+                        <pre id="reviewDiff" class="code-block"></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2024 AI Code Review Assistant. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/config.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/review.js"></script>
+    <script src="../js/review-detail.js"></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Collaboration - AI Code Review</title>
+<link rel="stylesheet" href="../../css/styles.css">
+<link rel="stylesheet" href="../../css/features.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+<nav class="navbar"><div class="container">
+<a href="../../index.html" class="nav-brand"><i class="fas fa-code-branch"></i><span>AI Code Review</span></a>
+<div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+<div class="nav-menu" id="navMenu">
+<a href="../../index.html" class="nav-link" data-nav="home">Home</a>
+<a href="../features.html" class="nav-link" data-nav="features">Features</a>
+<a href="../login.html" class="nav-link" data-nav="login">Login</a>
+<a href="../register.html" class="nav-link" data-nav="register">Register</a>
+</div></div></nav>
+<section class="feature-hero"><div class="container"><div>
+<p class="feature-breadcrumb"><a href="../features.html">Features</a> / Team</p>
+<h1><i class="fas fa-users"></i> Team Collaboration</h1>
+<p>Share review results, export reports, and keep your team aligned on code quality.</p>
+</div><i class="fas fa-users feature-hero-icon"></i></div></section>
+
+<section class="page-about"><div class="container"><div class="page-about-content">
+<h2>About Team Collaboration</h2>
+<p>Work better together. Our Team Collaboration feature enables seamless sharing of code reviews, exportable reports, and team activity tracking to keep everyone aligned on code quality standards and improvements.</p>
+<div class="page-about-features">
+<div class="page-about-feature"><i class="fas fa-share-alt"></i><h3>Easy Sharing</h3><p>Share reviews with one click</p></div>
+<div class="page-about-feature"><i class="fas fa-download"></i><h3>Export Reports</h3><p>Download detailed analysis</p></div>
+<div class="page-about-feature"><i class="fas fa-users-cog"></i><h3>Team Activity</h3><p>Track team review progress</p></div>
+</div></div></div></section>
+
+<section class="feature-body"><div class="container">
+<div class="feature-grid-2">
+<div class="feature-panel"><h2><i class="fas fa-check-circle"></i> Capabilities</h2><ul class="benefit-list"><li>Shareable review detail links</li><li>Downloadable text reports</li><li>Team activity feed</li><li>Review history for all PRs</li><li>Profile and GitHub token settings</li></ul></div>
+<div class="feature-panel"><h2><i class="fas fa-play-circle"></i> Live demo</h2>
+<label for="sampleCode">Paste code or diff:</label>
+<textarea id="sampleCode" class="demo-textarea"></textarea>
+
+<div class="demo-actions">
+<button type="button" class="btn btn-secondary" id="loadSampleBtn">Load Sample</button>
+<button type="button" class="btn btn-primary" id="runDemoBtn"><span class="btn-text"><i class="fas fa-play"></i> Run Scan</span><span class="btn-loader" style="display:none"><i class="fas fa-spinner fa-spin"></i></span></button>
+</div>
+<div id="demoResults" class="demo-results"><p>Score: <strong id="demoOverallScore">-</strong>/100</p>
+<div id="demoMetrics" class="metric-row"></div><h3>Findings</h3><div id="demoIssues"></div>
+<h3>Recommendations</h3><div id="demoSuggestions"></div>
+<a href="#" id="demoReviewLink" class="btn btn-secondary btn-sm" style="display:none;margin-top:1rem">View Saved Review</a></div>
+</div></div>
+            <div class="feature-panel"><h2><i class="fas fa-users"></i> Team activity</h2><div id="teamActivity"><p class="text-muted">Log in to see your team review feed.</p></div><div class="share-box"><input type="text" id="shareLink" readonly value="http://localhost:8080/pages/review-detail.html" aria-label="Share link"><button type="button" class="btn btn-secondary" id="copyShareBtn"><i class="fas fa-copy"></i> Copy</button></div></div>
+<div class="feature-panel" id="yourReviewsPanel" style="display:none"><h2><i class="fas fa-history"></i> Your reviews</h2><div id="userInsights"></div></div>
+<div class="cta-banner"><h3>Use Team Collaboration on every PR</h3><p>Create a free account to save and share results.</p>
+<a href="../register.html" class="btn btn-primary" id="featureLoginBtn">Get Started</a>
+<a href="../review.html" class="btn btn-primary" id="featureReviewBtn" style="display:none">New Review</a>
+<a href="#" class="btn btn-secondary" id="goToReviewBtn">Open Editor</a></div>
+</div></section>
+<footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2024 AI Code Review.</p></div></div></footer>
+<script src="../../js/config.js"></script><script src="../../js/auth.js"></script><script src="../../js/api.js"></script>
+<script src="../../js/nav.js"></script><script src="../../js/features.js"></script>
+<script>document.addEventListener('DOMContentLoaded',()=>{initFeaturePage('team-collaboration');if(Auth.isAuthenticated())document.getElementById('yourReviewsPanel').style.display='block';});</script>
+</body></html>

@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Analysis - AI Code Review</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link rel="stylesheet" href="../../css/features.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body data-feature="ai-analysis">
+    <nav class="navbar">
+        <div class="container">
+            <a href="../../index.html" class="nav-brand"><i class="fas fa-code-branch"></i><span>AI Code Review</span></a>
+            <div class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></div>
+            <div class="nav-menu" id="navMenu">
+                <a href="../../index.html" class="nav-link" data-nav="home">Home</a>
+                <a href="../features.html" class="nav-link" data-nav="features">Features</a>
+                <a href="../login.html" class="nav-link" data-nav="login">Login</a>
+                <a href="../register.html" class="nav-link" data-nav="register">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="feature-hero">
+        <div class="container">
+            <div>
+                <p class="feature-breadcrumb"><a href="../features.html">Features</a> / AI Analysis</p>
+                <h1><i class="fas fa-brain"></i> AI-Powered Analysis</h1>
+                <p>Advanced models analyze your code for bugs, security issues, and best practices using IBM watsonx.ai with intelligent fallbacks.</p>
+            </div>
+            <i class="fas fa-brain feature-hero-icon" aria-hidden="true"></i>
+        </div>
+    </section>
+
+    <!-- About AI Analysis Feature -->
+    <section class="page-about">
+        <div class="container">
+            <div class="page-about-content">
+                <h2>About AI-Powered Analysis</h2>
+                <p>
+                    Our AI-Powered Analysis feature uses advanced machine learning models from IBM watsonx.ai to provide
+                    comprehensive code reviews. Get instant feedback on code quality, security vulnerabilities, and best
+                    practices with actionable recommendations for improvement.
+                </p>
+                <div class="page-about-features">
+                    <div class="page-about-feature">
+                        <i class="fas fa-brain"></i>
+                        <h3>Smart Detection</h3>
+                        <p>AI identifies bugs and issues automatically</p>
+                    </div>
+                    <div class="page-about-feature">
+                        <i class="fas fa-chart-bar"></i>
+                        <h3>Detailed Scores</h3>
+                        <p>Category-based quality metrics</p>
+                    </div>
+                    <div class="page-about-feature">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Fix Suggestions</h3>
+                        <p>Concrete solutions with examples</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="feature-body">
+        <div class="container">
+            <div class="feature-grid-2">
+                <div class="feature-panel">
+                    <h2><i class="fas fa-check-circle"></i> What you get</h2>
+                    <ul class="benefit-list">
+                        <li>Full diff parsing across multiple files</li>
+                        <li>Category scores: quality, security, maintainability</li>
+                        <li>Actionable issues with severity levels</li>
+                        <li>Concrete fix suggestions with examples</li>
+                        <li>Downloadable review reports</li>
+                    </ul>
+                </div>
+                <div class="feature-panel">
+                    <h2><i class="fas fa-play-circle"></i> Try it now</h2>
+                    <label for="sampleCode">Paste code or git diff:</label>
+                    <textarea id="sampleCode" class="demo-textarea" aria-label="Code sample for analysis"></textarea>
+                    <div class="demo-actions">
+                        <button type="button" class="btn btn-secondary" id="loadSampleBtn">Load Sample</button>
+                        <button type="button" class="btn btn-primary" id="runDemoBtn">
+                            <span class="btn-text"><i class="fas fa-brain"></i> Run AI Analysis</span>
+                            <span class="btn-loader" style="display:none"><i class="fas fa-spinner fa-spin"></i></span>
+                        </button>
+                    </div>
+                    <div id="demoResults" class="demo-results">
+                        <p>Overall score: <strong id="demoOverallScore">-</strong>/100</p>
+                        <div id="demoMetrics" class="metric-row"></div>
+                        <h3>Issues</h3>
+                        <div id="demoIssues"></div>
+                        <h3>Recommendations</h3>
+                        <div id="demoSuggestions"></div>
+                        <a href="#" id="demoReviewLink" class="btn btn-secondary btn-sm" style="display:none;margin-top:1rem">View Full Review</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-panel" id="yourReviewsPanel" style="display:none">
+                <h2><i class="fas fa-history"></i> Your recent AI reviews</h2>
+                <div id="userInsights"></div>
+            </div>
+
+            <div class="cta-banner">
+                <h3>Ready for production-grade reviews?</h3>
+                <p>Sign in to save reviews, track history, and share with your team.</p>
+                <a href="../register.html" class="btn btn-primary" id="featureLoginBtn">Get Started Free</a>
+                <a href="../review.html" class="btn btn-primary" id="featureReviewBtn" style="display:none">Open Full Review</a>
+                <a href="#" class="btn btn-secondary" id="goToReviewBtn" style="margin-left:0.5rem">Continue in Editor</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2024 AI Code Review Assistant.</p></div></div></footer>
+
+    <script src="../../js/config.js"></script>
+    <script src="../../js/auth.js"></script>
+    <script src="../../js/api.js"></script>
+    <script src="../../js/nav.js"></script>
+    <script src="../../js/features.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => { initFeaturePage('ai-analysis'); if (Auth.isAuthenticated()) document.getElementById('yourReviewsPanel').style.display = 'block'; });</script>
+</body>
+</html>
+
