@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   const [hoveredFeature, setHoveredFeature] = useState<number | null>(null)
@@ -38,20 +39,20 @@ export default function Home() {
       <nav className="fixed top-0 w-full bg-gray-900/80 backdrop-blur-lg border-b border-gray-700 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">D</span>
               </div>
               <span className="text-white font-bold text-xl">DevInsight AI</span>
-            </div>
+            </Link>
             <div className="hidden md:flex space-x-8">
               <a href="#features" className="text-gray-300 hover:text-white transition">Features</a>
               <a href="#about" className="text-gray-300 hover:text-white transition">About</a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition">Contact</a>
+              <Link href="/documentation" className="text-gray-300 hover:text-white transition">Docs</Link>
             </div>
-            <button className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition">
+            <Link href="/dashboard" className="px-4 py-2 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg hover:shadow-lg hover:shadow-blue-500/50 transition">
               Get Started
-            </button>
+            </Link>
           </div>
         </div>
       </nav>
@@ -77,12 +78,12 @@ export default function Home() {
               Catch bugs, improve quality, and ship with confidence.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transform hover:scale-105 transition">
+              <Link href="/dashboard" className="px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold hover:shadow-2xl hover:shadow-blue-500/50 transform hover:scale-105 transition">
                 Start Free Trial
-              </button>
-              <button className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold border border-gray-700 hover:bg-gray-700 transition">
+              </Link>
+              <Link href="/documentation" className="px-8 py-4 bg-gray-800 text-white rounded-lg font-semibold border border-gray-700 hover:bg-gray-700 transition">
                 Watch Demo
-              </button>
+              </Link>
             </div>
           </div>
 
@@ -127,16 +128,16 @@ export default function Home() {
           </div>
 
           {/* CTA Section */}
-          <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center">
+          <div id="about" className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Elevate Your Code Quality?
             </h2>
             <p className="text-blue-100 mb-8 text-lg">
               Join thousands of developers using DevInsight AI
             </p>
-            <button className="px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition">
+            <Link href="/dashboard" className="inline-block px-8 py-4 bg-white text-blue-600 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition">
               Get Started Now →
-            </button>
+            </Link>
           </div>
         </div>
       </main>
